@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "261121190061",
+    "project_id": "eccomersand",
+    "storage_bucket": "eccomersand.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261121190061:android:976bb2bcde6cafec4f7e24",
+        "android_client_info": {
+          "package_name": "com.keltiga.eccomerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "261121190061-lovh12r14m9h9qdr97aut35ec1k1tf55.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.keltiga.eccomerce",
+            "certificate_hash": "3133e8a983f7f082bc9f4721886f066b485275da"
+          }
+        },
+        {
+          "client_id": "261121190061-5qtkmsmiln7vjo7vkotah8osm0tti648.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFB7P0Fs2mtqisjdqRKY1sHU-AcI2-AXw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "261121190061-5qtkmsmiln7vjo7vkotah8osm0tti648.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
