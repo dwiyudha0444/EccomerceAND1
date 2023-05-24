@@ -1,5 +1,6 @@
 package com.keltiga.eccomerce.view
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -15,54 +16,39 @@ import com.keltiga.eccomerce.databinding.FragmentRegisterBinding
 
 class RegisterFragment : Fragment() {
     lateinit var binding: FragmentRegisterBinding
-    private lateinit var sharedRegis: SharedPreferences
-    private lateinit var firebaseAuth: FirebaseAuth
+    lateinit var sharedpref: SharedPreferences
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentRegisterBinding.inflate(inflater, container, false)
+        binding = FragmentRegisterBinding.inflate(layoutInflater, container, false)
         return binding.root
-
-
     }
 
+    @SuppressLint("SuspiciousIndentation")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        sharedRegis = requireContext().getSharedPreferences("dataUser", Context.MODE_PRIVATE)
-        firebaseAuth = FirebaseAuth.getInstance()
-
-        binding.btnDaftar.setOnClickListener {
-            val getUsername = binding.etUsernameregister.text.toString()
-            val getEmail = binding.etEmailregister.text.toString()
-            val getPass = binding.etPasswordregister.text.toString()
-            val getRepeatPass = binding.etPasswordregister.text.toString()
-
-            val addUser = sharedRegis.edit()
-            addUser.putString("user", getUsername)
-
-            if (getUsername.isNotEmpty()&& getEmail.isNotEmpty() && getPass.isNotEmpty() && getRepeatPass.isNotEmpty()){
-                if (getPass == getRepeatPass){
-                    addUser.apply()
-                    firebaseAuth.createUserWithEmailAndPassword(getEmail, getPass).addOnCompleteListener{
-                        if (it.isSuccessful){
-                            Toast.makeText(context, "Register Berhasil", Toast.LENGTH_SHORT).show()
-                            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
-                        } else{
-                            Toast.makeText(context,it.exception.toString(), Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                }else{
-                    Toast.makeText(context, "Password tidak Sesuai", Toast.LENGTH_SHORT).show()
-                }
+        sharedpref = requireContext().getSharedPreferences("dataUser", Context.MODE_PRIVATE)
+        binding.btnReg.setOnClickListener {
+            val nama = binding.etName.text.toString()
+            val username = binding.etUsername.text.toString()
+            val password = binding.etPass.text.toString()
+            val uPassword = binding.etConfpass.text.toString()
+            if(password == uPassword){
+                val a = sharedpref.edit()
+                a.putString("nama", nama)
+                a.putString("userName", username)
+                a.putString("password", password)
+                a.apply()
+                findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+                Toast.makeText(context,"Berhasil Regist", Toast.LENGTH_LONG).show()
             }else{
-                Toast.makeText(context, "Data Belum Lengkap", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,"Password harus sama", Toast.LENGTH_LONG).show()
             }
-
-
-
         }
+
+
     }
+
 }

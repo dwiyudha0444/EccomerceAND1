@@ -23,6 +23,22 @@
         android:layout_marginTop="10dp"
         android:src="@drawable/ic_ec" />
 
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/tv_name"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,7 +48,7 @@
         app:boxStrokeColor="@color/black">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_usernameregister"
+            android:id="@+id/et_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -47,7 +63,7 @@
         app:boxStrokeColor="@color/black">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_emailregister"
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -63,7 +79,7 @@
         app:endIconMode="password_toggle">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_passwordregister"
+            android:id="@+id/et_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword" />
@@ -80,7 +96,7 @@
         app:endIconMode="password_toggle">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_repasswordregister"
+            android:id="@+id/et_confpass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword" />
@@ -88,7 +104,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btnDaftar"
+        android:id="@+id/btnReg"
         android:layout_width="380dp"
         android:layout_height="60dp"
         android:text="@string/tv_register" />

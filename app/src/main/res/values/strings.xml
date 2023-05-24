@@ -15,4 +15,6 @@
     <string name="tv_logout">Logout</string>
     <string name="tv_register">Register</string>
     <string name="tv_pass2">Confirm Password</string>
+    <string name="welcome">welcome</string>
+    <string name="tv_name">Name</string>
 </resources>
