@@ -1,5 +1,6 @@
-Pre Final Project
-Product : ecommerce product product IT , e.g : laptop, handphone, etc
+Project test-test Pre Final Project ,,
+Full Project di https://github.com/MuchamadAndriyanto/BinarEcoomerceAND1
+
 
 
 
