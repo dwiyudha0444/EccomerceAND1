@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.keltiga.eccomerce.databinding.FragmentRegisterBinding
 import com.keltiga.eccomerce.network.ApiClient
@@ -39,17 +40,15 @@ class RegisterFragment : Fragment() {
     }
 
     private fun registerUser(username: String, password: String) {
-        val call = apiService.registerUser(username, password)
+        val call = apiService.user(username, password)
         call.enqueue(object : Callback<ApiResponse> {
             override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
                 if (response.isSuccessful) {
                     val apiResponse = response.body()
                     if (apiResponse != null && apiResponse.success) {
-                        // Registrasi sukses
-                        // Lakukan tindakan setelah berhasil mendaftar
+                        Toast.makeText(context, "Register Berhasil", Toast.LENGTH_SHORT).show()
                     } else {
-                        // Registrasi gagal
-                        // Tampilkan pesan kesalahan
+                        Toast.makeText(context, "Register Gagal", Toast.LENGTH_SHORT).show()
                     }
                 } else {
                     // Respons tidak berhasil
