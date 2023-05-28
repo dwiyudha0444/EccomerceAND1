@@ -14,7 +14,6 @@ import com.keltiga.eccomerce.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
 
-
     lateinit var binding: FragmentLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreateView(
